@@ -9,7 +9,7 @@
 - Conversão Ecológica: Converte o total de CO₂ acumulado no ano em número equivalente de árvores necessárias para absorver aquele gás.
 - Comparador: Mostra quanto CO₂ a pessoa economizaria se trocasse 2 dias da semana por transporte público ou bicicleta.
 
-## Código a ser utilizado 
+## Código a ser utilizado (FrameWorks)
 
 - .NETMAVI
 - WINDOWSFORM
