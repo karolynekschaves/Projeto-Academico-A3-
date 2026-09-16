@@ -9,8 +9,6 @@ namespace WinFormsApp1
     {
         // Controls
         private Label lblWelcome;
-        private Panel pnlCircle;
-        private Label lblIcon;
         private Label lblTitle;
         private Panel pnlInfo;
         private Label lblInfoIcon;
@@ -28,12 +26,6 @@ namespace WinFormsApp1
 
         private void Form1_Load(object? sender, EventArgs e)
         {
-            // center some controls that relied on ClientSize during Initialize
-            pnlCircle.Left = (this.ClientSize.Width - pnlCircle.Width) / 2;
-            lblTitle.Left = 0;
-            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
-            lblTitle.Left = 0;
-            lblTitle.Width = this.ClientSize.Width;
 
             // Round the enter button
             SetRoundedRegion(btnEnter, 22);
@@ -93,6 +85,26 @@ namespace WinFormsApp1
         }
 
         private void lblWelcome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDesc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

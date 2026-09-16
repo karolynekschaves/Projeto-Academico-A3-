@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             lblWelcome = new Label();
-            pnlCircle = new Panel();
-            lblIcon = new Label();
             lblTitle = new Label();
             pnlInfo = new Panel();
             lblInfoIcon = new Label();
@@ -39,8 +38,11 @@
             lblDesc = new Label();
             btnEnter = new Button();
             lblFooter = new Label();
-            pnlCircle.SuspendLayout();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             pnlInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblWelcome
@@ -55,35 +57,12 @@
             lblWelcome.Text = "Boas-vindas e login";
             lblWelcome.Click += lblWelcome_Click;
             // 
-            // pnlCircle
-            // 
-            pnlCircle.Anchor = AnchorStyles.Top;
-            pnlCircle.BackColor = Color.FromArgb(212, 249, 224);
-            pnlCircle.Controls.Add(lblIcon);
-            pnlCircle.Location = new Point(284, 70);
-            pnlCircle.Name = "pnlCircle";
-            pnlCircle.Size = new Size(140, 140);
-            pnlCircle.TabIndex = 1;
-            pnlCircle.Paint += PnlCircle_Paint;
-            // 
-            // lblIcon
-            // 
-            lblIcon.Dock = DockStyle.Fill;
-            lblIcon.Font = new Font("Segoe UI Emoji", 36F);
-            lblIcon.Location = new Point(0, 0);
-            lblIcon.Name = "lblIcon";
-            lblIcon.Size = new Size(140, 140);
-            lblIcon.TabIndex = 0;
-            lblIcon.Text = "🌱";
-            lblIcon.TextAlign = ContentAlignment.MiddleCenter;
-            lblIcon.Click += lblIcon_Click;
-            // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(45, 62, 48);
-            lblTitle.Location = new Point(284, 230);
+            lblTitle.Location = new Point(12, 221);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(104, 30);
             lblTitle.TabIndex = 2;
@@ -95,7 +74,7 @@
             pnlInfo.BackColor = Color.FromArgb(225, 245, 236);
             pnlInfo.Controls.Add(lblInfoIcon);
             pnlInfo.Controls.Add(lblInfoText);
-            pnlInfo.Location = new Point(20, 287);
+            pnlInfo.Location = new Point(30, 288);
             pnlInfo.Name = "pnlInfo";
             pnlInfo.Size = new Size(284, 80);
             pnlInfo.TabIndex = 3;
@@ -125,7 +104,7 @@
             // 
             lblMain.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblMain.ForeColor = Color.FromArgb(30, 30, 30);
-            lblMain.Location = new Point(30, 370);
+            lblMain.Location = new Point(36, 398);
             lblMain.Name = "lblMain";
             lblMain.Size = new Size(284, 80);
             lblMain.TabIndex = 4;
@@ -135,7 +114,7 @@
             // 
             lblDesc.Font = new Font("Segoe UI", 9F);
             lblDesc.ForeColor = Color.FromArgb(110, 110, 110);
-            lblDesc.Location = new Point(30, 460);
+            lblDesc.Location = new Point(36, 478);
             lblDesc.Name = "lblDesc";
             lblDesc.Size = new Size(284, 60);
             lblDesc.TabIndex = 5;
@@ -148,7 +127,7 @@
             btnEnter.FlatStyle = FlatStyle.Flat;
             btnEnter.Font = new Font("Segoe UI", 10F);
             btnEnter.ForeColor = Color.White;
-            btnEnter.Location = new Point(60, 540);
+            btnEnter.Location = new Point(36, 541);
             btnEnter.Name = "btnEnter";
             btnEnter.Size = new Size(284, 44);
             btnEnter.TabIndex = 6;
@@ -161,20 +140,43 @@
             lblFooter.AutoSize = true;
             lblFooter.Font = new Font("Segoe UI", 8F);
             lblFooter.ForeColor = Color.FromArgb(160, 160, 160);
-            lblFooter.Location = new Point(40, 261);
+            lblFooter.Location = new Point(30, 602);
             lblFooter.Name = "lblFooter";
             lblFooter.Size = new Size(317, 13);
             lblFooter.TabIndex = 7;
             lblFooter.Text = "Ao entrar você aceita nossos Termos e Política de Privacidade";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(70, 47);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(208, 171);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.FromArgb(179, 216, 139);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(125, 86);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(104, 85);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(400, 800);
+            ClientSize = new Size(370, 800);
+            Controls.Add(pictureBox1);
+            Controls.Add(pictureBox2);
             Controls.Add(lblWelcome);
-            Controls.Add(pnlCircle);
             Controls.Add(lblTitle);
             Controls.Add(pnlInfo);
             Controls.Add(lblMain);
@@ -184,13 +186,16 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EcoTrace - Login";
-            pnlCircle.ResumeLayout(false);
             pnlInfo.ResumeLayout(false);
             pnlInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
     }
 }
